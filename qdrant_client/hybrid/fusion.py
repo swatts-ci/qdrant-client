@@ -50,7 +50,7 @@ def distribution_based_score_fusion(
 
     points_map: Dict[models.ExtendedPointId, models.ScoredPoint] = {}
     for response in responses:
-        if not response:
+        if len(response) < 2:
             continue
         normalized = normalize(response)
         for point in normalized:
